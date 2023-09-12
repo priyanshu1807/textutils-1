@@ -1,10 +1,10 @@
 // import logo from './logo.svg';
-// import About from './About';
+import About from './About';
 import Alert from './Alert';
 import './App.css';
 import Navbar from './Components/Navbar';
 import Textform from './Textform';
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState } from 'react'
 
 function App() {
@@ -40,19 +40,19 @@ function App() {
   }
   return (
     <>
-      {/* <BrowserRouter> */}
+      <BrowserRouter>
         <Navbar title="Textutils" mode={mode} togglemode={togglemode} />
         <Alert alert={alert} />
         <div className="container my-3">
 
-          {/* <Routes> */}
-              {/* <Route path="/" element={  />} /> */}
-          <Textform showAlert={showAlert} heading="Enter the text to analyze" mode={mode}/>
-            {/* <Route path="/about" element={  <About />}> */}
-            {/* </Route> */}
-          {/* </Routes> */}
+          <Routes>
+              <Route path="/" element={ <Textform showAlert={showAlert} heading="Enter the text to analyze" mode={mode}/> } />
+          
+            <Route path="/about" element={  <About />}>
+            </Route>
+          </Routes>
         </div>
-      {/* </BrowserRouter> */}
+      </BrowserRouter>
 
 
 
